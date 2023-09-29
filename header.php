@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,10 +33,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/bibliotheque/crudlivre/insertion.php">Ajout Livre</a>
                     </li>
+                    <?php if(!empty($_SESSION)){?> 
                     <li class="nav-item">
-                        <a class="nav-link" href="/bibliotheque/abonne.php">Inscription/connexion</a>
+                        <a class="nav-link" href="/bibliotheque/inscription.php?action=true">Deconnexion</a>
                     </li>
-
+                    <?php }else{ ?> 
+                    <li class="nav-item">
+                        <a class="nav-link" href="/bibliotheque/inscription.php">Inscription/connexion</a>
+                    </li>
+                        <?php } ?>
                 </ul>
 
             </div>
